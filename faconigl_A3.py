@@ -11,7 +11,7 @@ evidence of effort and experimentation.
 """
 
 import pandas as pd
-from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import AgglomerativeClustering # From https://scikit-learn.org/dev/modules/generated/sklearn.cluster.AgglomerativeClustering.html
 from sklearn import cluster
 from sklearn.metrics import silhouette_score
 
