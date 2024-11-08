@@ -23,7 +23,7 @@ X_auto = auto_file.select_dtypes(include=['number']) # Select only numerical col
 
 # KMeans clustering
 
-k_means_auto = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seem to be the best fit
+k_means_auto = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seem to be the best fit (in terms of silhouette score)
 k_means_auto.fit(X_auto)
 
 print("Auto Dataset KMeans Clustering Results:")
@@ -66,7 +66,7 @@ X_credit = credit_file.select_dtypes(include=['number']) # Select only numerical
 
 # KMeans clustering
 
-k_means_credit = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seem to be the best fit
+k_means_credit = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seem to be the best fit (in terms of silhouette score)
 k_means_credit.fit(X_credit)
 credit_labels_kmeans = k_means_credit.labels_
 
