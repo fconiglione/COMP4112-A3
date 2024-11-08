@@ -28,16 +28,16 @@ k_means_auto.fit(X_auto)
 
 print("Auto Dataset KMeans Clustering Results:")
 print(k_means_auto.labels_[:20])
-print("Silhouette Score: ", silhouette_score(X_auto, k_means_auto.labels_))
+print("Silhouette Score (KMeans): ", silhouette_score(X_auto, k_means_auto.labels_))
 
 # Agglomerative clustering
 
-agg_clust_auto = AgglomerativeClustering(n_clusters=2)
-agg_clust_auto_labels = agg_clust_auto.fit_predict(X_auto)
+agglomerative_clust_auto = AgglomerativeClustering(n_clusters=2)
+agglomerative_clust_auto_labels = agglomerative_clust_auto.fit_predict(X_auto)
 
 print("\nAuto Dataset Agglomerative Clustering Results:")
-print(agg_clust_auto_labels[:20])
-print("Silhouette Score (Agglomerative): ", silhouette_score(X_auto, agg_clust_auto_labels))
+print(agglomerative_clust_auto_labels[:20])
+print("Silhouette Score (Agglomerative): ", silhouette_score(X_auto, agglomerative_clust_auto_labels))
 
 # Plotting the clusters for three features
 
@@ -50,7 +50,7 @@ ax.set_ylabel("cylinders")
 ax.set_zlabel("displacement")
 
 ax2 = fig.add_subplot(122, projection='3d')
-ax2.scatter(X_auto.iloc[:, 0], X_auto.iloc[:, 1], X_auto.iloc[:, 2], c=agg_clust_auto_labels, cmap='viridis', edgecolor='k')
+ax2.scatter(X_auto.iloc[:, 0], X_auto.iloc[:, 1], X_auto.iloc[:, 2], c=agglomerative_clust_auto_labels, cmap='viridis', edgecolor='k')
 ax2.set_title("Auto Dataset Agglomerative Clustering")
 ax2.set_xlabel("mpg")
 ax2.set_ylabel("cylinders")
@@ -72,29 +72,29 @@ credit_labels_kmeans = k_means_credit.labels_
 
 print("Credit Dataset KMeans Clustering Results:")
 print(k_means_credit.labels_[:20])
-print("Silhouette Score: ", silhouette_score(X_credit, k_means_credit.labels_))
+print("Silhouette Score (KMeans): ", silhouette_score(X_credit, k_means_credit.labels_))
 
 # Agglomerative clustering
 
-agg_clust_credit = AgglomerativeClustering(n_clusters=3)
-agg_clust_credit_labels = agg_clust_credit.fit_predict(X_credit)
+agglomerative_clust_credit = AgglomerativeClustering(n_clusters=3)
+agglomerative_clust_credit_labels = agglomerative_clust_credit.fit_predict(X_credit)
 
 print("\nCredit Dataset Agglomerative Clustering Results:")
-print(agg_clust_credit_labels[:20])
-print("Silhouette Score (Agglomerative): ", silhouette_score(X_credit, agg_clust_credit_labels))
+print(agglomerative_clust_credit_labels[:20])
+print("Silhouette Score (Agglomerative): ", silhouette_score(X_credit, agglomerative_clust_credit_labels))
 
 # Plotting the clusters for three features
 
 fig = plt.figure(figsize=(10, 5))
 ax = fig.add_subplot(121, projection='3d')
-ax.scatter(X_credit.iloc[:, 0], X_credit.iloc[:, 1], X_credit.iloc[:, 2], c=credit_labels_kmeans, cmap='viridis', edgecolor='k')
+ax.scatter(X_credit.iloc[:, 0], X_credit.iloc[:, 1], X_credit.iloc[:, 2], c=credit_labels_kmeans, edgecolor='k')
 ax.set_title("Credit Dataset KMeans Clustering")
 ax.set_xlabel("Income")
 ax.set_ylabel("Limit")
 ax.set_zlabel("Rating")
 
 ax2 = fig.add_subplot(122, projection='3d')
-ax2.scatter(X_credit.iloc[:, 0], X_credit.iloc[:, 1], X_credit.iloc[:, 2], c=agg_clust_credit_labels, cmap='viridis', edgecolor='k')
+ax2.scatter(X_credit.iloc[:, 0], X_credit.iloc[:, 1], X_credit.iloc[:, 2], c=agglomerative_clust_credit_labels, edgecolor='k')
 ax2.set_title("Credit Dataset Agglomerative Clustering")
 ax2.set_xlabel("Income")
 ax2.set_ylabel("Limit")
