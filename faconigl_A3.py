@@ -26,7 +26,7 @@ X_auto = auto_file.select_dtypes(include=['number']) # Select only numerical col
 k_means_auto = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seems to be the best fit
 k_means_auto.fit(X_auto)
 
-print("auto Dataset KMeans Clustering Results:")
+print("Auto Dataset KMeans Clustering Results:")
 print(k_means_auto.labels_[:20])
 print("Silhouette Score: ", silhouette_score(X_auto, k_means_auto.labels_))
 
@@ -35,11 +35,11 @@ print("Silhouette Score: ", silhouette_score(X_auto, k_means_auto.labels_))
 agg_clust_auto = AgglomerativeClustering(n_clusters=2)
 agg_clust_auto_labels = agg_clust_auto.fit_predict(X_auto)
 
-print("\nauto Dataset Agglomerative Clustering Results:")
+print("\nAuto Dataset Agglomerative Clustering Results:")
 print(agg_clust_auto_labels[:20])
 print("Silhouette Score (Agglomerative): ", silhouette_score(X_auto, agg_clust_auto_labels))
 
-# Plotting the clusters
+# Plotting the clusters for three features
 
 fig = plt.figure(figsize=(10, 5))
 ax = fig.add_subplot(121, projection='3d')
@@ -83,7 +83,7 @@ print("\nCredit Dataset Agglomerative Clustering Results:")
 print(agg_clust_credit_labels[:20])
 print("Silhouette Score (Agglomerative): ", silhouette_score(X_credit, agg_clust_credit_labels))
 
-# Plotting the clusters
+# Plotting the clusters for three features
 
 fig = plt.figure(figsize=(10, 5))
 ax = fig.add_subplot(121, projection='3d')
