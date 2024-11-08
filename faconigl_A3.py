@@ -16,7 +16,7 @@ from sklearn import cluster
 from sklearn.metrics import silhouette_score
 import matplotlib.pyplot as plt
 
-# Dataset 1: Auto.tsv
+# Dataset 1: Auto.csv
 
 auto_file = pd.read_csv("Auto.csv")
 X_auto = auto_file.select_dtypes(include=['number']) # Select only numerical columns
