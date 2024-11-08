@@ -16,14 +16,14 @@ from sklearn import cluster
 from sklearn.metrics import silhouette_score
 import matplotlib.pyplot as plt
 
-# Dataset 1: auto.tsv
+# Dataset 1: Auto.tsv
 
 auto_file = pd.read_csv("Auto.csv")
 X_auto = auto_file.select_dtypes(include=['number']) # Select only numerical columns
 
 # KMeans clustering
 
-k_means_auto = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seems to be the best fit
+k_means_auto = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seem to be the best fit
 k_means_auto.fit(X_auto)
 
 print("Auto Dataset KMeans Clustering Results:")
@@ -66,7 +66,7 @@ X_credit = credit_file.select_dtypes(include=['number']) # Select only numerical
 
 # KMeans clustering
 
-k_means_credit = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seems to be the best fit
+k_means_credit = cluster.KMeans(n_clusters=3) # After some experimentation, 3 clusters seem to be the best fit
 k_means_credit.fit(X_credit)
 credit_labels_kmeans = k_means_credit.labels_
 
@@ -102,3 +102,4 @@ ax2.set_zlabel("Rating")
 plt.show()
 
 # Referenced example code from ex1_kmeans_basic_iris.py and k-means-clustering-visual.py
+# Referenced https://stackoverflow.com/questions/78827396/python-3d-scatter-plot-linking-annotation-between-subplots for further 3D scatter plot information
